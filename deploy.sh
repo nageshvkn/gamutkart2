@@ -1,28 +1,19 @@
 #!/bin/bash
-#one
-TOMCAT_HOST=192.168.1.6
-TOMCAT_USER=gamut-idc-node1
-TOMCAT_PWD=gamut
-TOMCAT_HOME=/home/gamut-idc-node1/Distros/apache-tomcat-8.5.11
 #
-WAR_FILE_PATH=target/gamutkart.war
+echo Selected Environemnt $ENVIRONMENT...
+echo Deploying the code into $ENVIRONMENT...
 
-echo "Bringing tomcat server down for deployment..."
-sleep 3
+if [ $ENVIRONMENT="QA" ];then
+  sshpass -p "gamut" scp /home/praveen/.jenkins/workspace/test_gamutkart/target/gamutkart.war \
+  gamut@172.17.0.2:/home/gamut/Distros/apache-tomcat-8.5.11/webapps
+  echo "Deployment is succussful!"
+  echo "Starting tomcat server.."
+  sshpass -p "gamut" ssh gamut@172.17.0.2 "JAVA_HOME=/home/gamut/Distros/jdk1.8.0_121" "/home/gamut/Distros/apache-tomcat-8.5.11/bin/startup.sh"
 
-$TOMCAT_HOME/bin/shutdown.sh 1>/dev/null 2>&1
-
-#1>file.log 2>&1
-if [ -f $WAR_FILE_PATH ];then
-    echo "deploying gamutkart application..."
-    sleep 4
-    sshpass -p "Gamut" ssh $TOMCAT_USER@$TOMCAT_HOST
-    scp  $WAR_FILE_PATH $TOMCAT_USER@$TOMCAT_HOST:$TOMCAT_HOME/webapps
-else
-   echo "war file doesn't exist! Please check the build"
+elif [ $ENVIRONMENT="SIT" ];then
+  sshpass -p "gamut" scp /home/praveen/.jenkins/workspace/test_gamutkart/target/gamutkart.war \
+  gamut@172.17.0.3:/home/gamut/Distros/apache-tomcat-8.5.11/webapps
+  echo "Deployment is succussful!"
+  echo "Starting tomcat server.."
+  sshpass -p "gamut" ssh gamut@172.17.0.3 "JAVA_HOME=/home/gamut/Distros/jdk1.8.0_121" "/home/gamut/Distros/apache-tomcat-8.5.11/bin/startup.sh"
 fi
-
-echo "starting tomcat server..."
-$TOMCAT_HOME/bin/startup.sh 1>/dev/null 2>&1
-
-echo "deployment is successful! Email notification has been sent!"
