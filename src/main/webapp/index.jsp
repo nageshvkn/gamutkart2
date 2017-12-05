@@ -32,7 +32,7 @@
 
 		<div id="tabs">
 			<ul>
-			<li><a href="#tabs-1">Fashionista</a></li>
+			<li><a href="#tabs-1">Fashions</a></li>
 				<li><a href="#tabs-2">Electronics</a></li>
 				<li><a href="#tabs-3">Groceries</a></li>
 				<li><a href="#tabs-4">Mobiles</a></li>
