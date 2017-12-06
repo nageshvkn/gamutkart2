@@ -27,7 +27,7 @@
 	<div class="container">
 
 		<header>
-			<h1>GamutKart Retail Store</h1> 
+			<h1>GamutKart e-commerce Portal</h1> 
 		</header>
 
 		<div id="tabs">
