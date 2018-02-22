@@ -10,7 +10,7 @@
 		    }
 			stage('Build') {
 		        steps {
-					sh 'mvn install -DskipTest'
+					sh 'mvn install -DskipTests'
 		        }
 			}
 			stage('Test') {
