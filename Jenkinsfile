@@ -4,7 +4,7 @@
 		stages {
 		    stage('gamutkart_build') {
 		        steps {
-		            echo 'Building..'
+					mvn install
 		        }
 		    }
 		    stage('gamutkart_publish_test_reports') {
