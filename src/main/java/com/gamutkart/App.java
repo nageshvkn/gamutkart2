@@ -12,6 +12,7 @@ public class App
 		for(i=0;i<=10;i++)
 		{
         	System.out.println( "print number: " + i);
+        	System.out.println( "print number: " + i);
    		}
 	 }
 }
