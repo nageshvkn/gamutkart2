@@ -2,11 +2,21 @@
 		agent any
 
 		stages {
-		    stage('gamutkart_build') {
+		    stage('Checkout') {
 		        steps {
 					checkout scm
-					sh 'mvn install'
+					
 		        }
 		    }
+			stage('Build') {
+		        steps {
+					sh 'mvn install -DskipTest'
+		        }
+			}
+			stage('Test') {
+		        steps {
+					sh 'mvn test'
+		        }
+			}
 		}
 	}
