@@ -4,6 +4,7 @@
 		stages {
 		    stage('gamutkart_build') {
 		        steps {
+					checkout scm
 					mvn install
 		        }
 		    }
