@@ -9,7 +9,7 @@
 		    }
 			stage('Build') {
 		        steps {
-					bash 'mvn install'
+					sh 'mvn install'
 		        }
 			}
 		}
