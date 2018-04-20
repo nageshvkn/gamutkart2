@@ -11,7 +11,7 @@ public class App
 		int i;
 		for(i=0;i<=100;i++)
 		{
-			i = i+2;
+			i += 2;
         	System.out.println( "print number: " + i);
    		}
 	 }
