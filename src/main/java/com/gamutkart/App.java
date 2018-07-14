@@ -9,6 +9,7 @@ public class App
 		{
 			i += 4;
         	System.out.println( "print number: " + i);
+        	System.out.println( "print number: " + i);
    		}
 	 }
 }
