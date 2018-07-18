@@ -1,16 +1,15 @@
-	pipeline {
-		agent any
+pipeline {
+	agent any
 
-		stages {
-		    stage('Checkout') {
-		        steps {
-					checkout scm	
-		        }
+	stages {
+	    stage('Checkout') {
+	        steps {
+				checkout scm			        }
 		    }
-			stage('Build') {
-		        steps {
-					sh 'mvn install'
-		        }
-			}
+		stage('Build') {
+	        steps {
+				sh 'mvn install'
+	        }
 		}
 	}
+}
