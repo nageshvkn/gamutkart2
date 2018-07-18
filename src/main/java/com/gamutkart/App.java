@@ -7,7 +7,7 @@ public class App
 		int i;
 		for(i=0;i<=200;i++)
 		{
-			i += 4;
+			i += 2;
         	System.out.println( "print number: " + i);
    		}
 	 }
