@@ -2,7 +2,7 @@
 
 ENVIRONMENT=$1
 
-if [ $ENVIRONMENT = "QA" ];then
+if [ $ENVIRONMENT -eq "QA" ];then
 	for i in `cat IPs.txt`
 	do
 #
