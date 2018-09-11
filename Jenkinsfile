@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label win-label-1
+		label 'win-label-1'
 	} 
 
 	stages {
