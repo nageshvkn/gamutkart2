@@ -1,5 +1,7 @@
 pipeline {
-	agent slave1 
+	agent {
+		label win-label-1
+	} 
 
 	stages {
 	    stage('Checkout') {
