@@ -1,4 +1,6 @@
 #!/bin/bash
+##
+##
 ENVIRONMENT=$1
 if [ $ENVIRONMENT = "QA" ];then
 	sshpass -p "gamut" scp target/gamutkart.war gamut@172.17.0.2:/home/gamut/Distros/apache-tomcat-8.5.23/webapps
