@@ -1,12 +1,5 @@
 pipeline {
-/*
-	environment {
-        MAVEN_HOME = tool('maven3.5')
-    }
-*/
-	agent {
-		label 'win-label-1'
-	} 
+	agent none
 
 	stages {
 	    stage('Checkout') {
