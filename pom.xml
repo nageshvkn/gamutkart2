@@ -1,7 +1,6 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 
-<!-- this is a comment in xml -->	
 	<groupId>com.gamutgurus</groupId>
 	<artifactId>gamutkart</artifactId>
 	<packaging>war</packaging>
