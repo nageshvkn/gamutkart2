@@ -1,7 +1,6 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 
-<!-- this is a comment in xml -->	
 	<groupId>com.gamutgurus</groupId>
 	<artifactId>gamutkart</artifactId>
 	<packaging>war</packaging>
@@ -19,6 +18,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 			
 	</dependencies>
