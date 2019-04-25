@@ -1,7 +1,6 @@
 #!/bin/bash
 
-if [ $ENVIRONMENT = "QA" ];then
-	for i in `cat multi-deploy-IPs.txt`
+for i in `cat multi-deploy-IPs.txt`
 	do
 #
 	echo "Deploying war file into $i QA server.."
@@ -13,4 +12,3 @@ if [ $ENVIRONMENT = "QA" ];then
 #
 	done
 	echo "Deployment is succussful!"
-fi
