@@ -1,5 +1,5 @@
 {
-   "name": "deployment",
+   "name": "web",
    "description": "Web server role.",
    "default_attributes": {
      "chef_client": {
