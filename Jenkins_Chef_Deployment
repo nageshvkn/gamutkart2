@@ -1,4 +1,4 @@
-Execute Shell provide below:
+In Jenkins "Execute Shell" provide below:
 
 cp target/gamutkart.war cookbooks/gamutkart/files
 
