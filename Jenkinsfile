@@ -1,9 +1,10 @@
 pipeline {
     agent any
 
+	environment {
+		M2_INSTALL = "/home/gamut/Distros/apache-maven-3.6.0/bin/mvn"
+	}
     stages {
-		def M2_INSTALL = "/home/gamut/Distros/apache-maven-3.6.0/bin/mvn"
-
         stage('Checkout') {
             steps {
 		checkout scm
