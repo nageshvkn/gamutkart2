@@ -12,7 +12,7 @@ pipeline {
 	}
 	stage('Build') {
 	    steps {
-		sh '${M2_INSTALL} install -DskiptTests'
+		sh '${M2_INSTALL} install -DskipTests'
 	}
 	    }
 	stage('Unit Tests') {
