@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     stages {
+		def M2_INSTALL = "/home/gamut/Distros/apache-maven-3.6.0/bin/mvn"
+
         stage('Checkout') {
             steps {
 		checkout scm
@@ -9,9 +11,14 @@ pipeline {
 	}
 	stage('Build') {
 	    steps {
-		sh '/home/gamut/Distros/apache-maven-3.6.0/bin/mvn install'
+		sh '${M2_INSTALL} install -DskiptTests'
 	}
 	    }
+	stage('Unit Tests') {
+		steps {
+			sh '${M2_INSTALL} surefire:test'
+		}
+	}
 	stage('Deployment') {
 	    steps {
 		sh 'sshpass -p "gamut" scp target/gamutkart.war gamut@172.17.0.3:/home/gamut/Distros/apache-tomcat-8.5.38/webapps'
