@@ -1,10 +1,6 @@
 pipeline {
 	agent any
 
-	environment {
-		M2_HOME = ${maven3.6}
-	}
-
 	stages {
 		stage('Clone-Repo') {
 			steps {
@@ -13,7 +9,8 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-				sh "${M2_HOME} install"
+				tool name: 'maven3.6', type: 'maven'
+				sh "${maven3.6} install"
 			}
 		}
 		stage('Create-Image') {
