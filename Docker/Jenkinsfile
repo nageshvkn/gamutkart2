@@ -1,6 +1,10 @@
 pipeline {
 	agent any
 
+	tools {
+		maven 'maven3.6'
+	}
+
 	stages {
 		stage('Clone-Repo') {
 			steps {
@@ -9,8 +13,7 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-				tool name: 'maven3.6', type: 'maven'
-				sh "${maven3.6} install"
+				sh "mvn install"
 			}
 		}
 		stage('Create-Image') {
