@@ -10,7 +10,7 @@ pipeline {
 //	}
 
     stages {
-		stage(Clone-Repo) {
+		stage('Clone-Repo') {
 			steps {
 				checkout scm
 			}
