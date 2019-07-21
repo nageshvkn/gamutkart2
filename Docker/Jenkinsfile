@@ -1,0 +1,26 @@
+pipeline {
+	agent any
+
+	stages {
+		stage('Clone-Repo') {
+			steps {
+				checkout scm
+			}
+		}
+		stage('Build') {
+			steps {
+				sh "/home/gamut/Distros/apache-maven-3.6.0/bin/mvn install"
+			}
+		}
+		stage('Create-Image') {
+			steps {
+				sh 'docker build -t="nageshvkn/gamutkart-img" .'
+			}
+		}
+		stage('Create-ENV') {
+			steps {
+				sh "./create-env.sh 8"
+			}
+		}
+	}
+}
