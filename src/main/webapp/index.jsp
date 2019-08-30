@@ -32,10 +32,10 @@
 
 		<div id="tabs">
 			<ul>
-			<li><a href="#tabs-1">Fashionista</a></li>
-				<li><a href="#tabs-2">Electronics</a></li>
-				<li><a href="#tabs-3">Groceries</a></li>
-				<li><a href="#tabs-4">Mobiles</a></li>
+			<li><a href="#tabs-1">fashions</a></li>
+				<li><a href="#tabs-2">electronics</a></li>
+				<li><a href="#tabs-3">groceries</a></li>
+				<li><a href="#tabs-4">mobiles</a></li>
 			</ul>
 			<div id="tabs-1">
 				<p>Jenkins is a powerful application that allows continuous
