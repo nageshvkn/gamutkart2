@@ -18,6 +18,7 @@ pipeline {
 		stage('Build') {
 	    	steps {
 				sh 'mvn install -DskipTests'
+				sh 'exit 0'
 			}
 	    }
 		stage('Unit Tests') {
