@@ -18,8 +18,6 @@ pipeline {
 		stage('Build') {
 	    	steps {
 				sh 'mvn install -DskipTests'
-				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh "exit 0"
                 }
 			}
 	    }
