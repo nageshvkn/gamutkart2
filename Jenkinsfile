@@ -27,10 +27,12 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				if(${params.ENVIRONMENT} == QA) {
-					println("Deploying the code into QA Env..");
-				} else if(${params.ENVIRONMENT} == SIT) {
-					println("Deploying the code into SIT Env..");
+				script {
+					if(${params.ENVIRONMENT} == QA) {
+						println("Deploying the code into QA Env..");
+					} else if(${params.ENVIRONMENT} == SIT) {
+						println("Deploying the code into SIT Env..");
+					}
 				}
 
 //				sh 'sshpass -p "gamut" scp target/gamutkart.war gamut@172.17.0.3:/home/gamut/Distros/apache-tomcat-8.5.41/webapps'
