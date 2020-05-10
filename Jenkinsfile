@@ -27,10 +27,10 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				if("${ENVIRONMENT}" == SIT)
+				if(env.ENVIRONMENT == "SIT")
 				{
 					println("deploying the code into SIT Environment");
-				} else if("${ENVIRONMENT}" == "QA")
+				} else if(env.ENVIRONMENT == "QA")
 				  {
 						println("deploying the code into QA Environment");
 				  }
