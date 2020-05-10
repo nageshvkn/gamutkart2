@@ -28,9 +28,9 @@ pipeline {
 		stage('Deployment') {
 	    	steps {
 				script {
-					if(params.ENVIRONMENT == QA) {
+					if(params.ENVIRONMENT == "QA") {
 						println("Deploying the code into QA Env..");
-					} else if(params.ENVIRONMENT == SIT) {
+					} else if(params.ENVIRONMENT == "SIT") {
 						println("Deploying the code into SIT Env..");
 					}
 				}
