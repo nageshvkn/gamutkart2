@@ -30,7 +30,7 @@ pipeline {
 				if(${ENVIRONMENT} == SIT)
 				{
 					println("deploying the code into SIT Environment");
-				} else if(${ENVIRONMENT} == "QA")
+				} else if("${ENVIRONMENT}" == "QA")
 				  {
 						println("deploying the code into QA Environment");
 				  }
