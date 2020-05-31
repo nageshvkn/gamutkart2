@@ -5,7 +5,8 @@ public class App
     public static void main( String[] args )
     {
 		int i;
-		for(i=0;i<=300;i++)
+// iterate for 800 times
+		for(i=0;i<=800;i++)
 		{
 			i += 4;
    		}
