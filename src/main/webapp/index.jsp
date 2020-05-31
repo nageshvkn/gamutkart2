@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GamutKart!</title>
+<title>Gamut Gurus Technologies - Exclusive DevOps & Cloud Learning Hub</title>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -27,7 +27,7 @@
 	<div class="container">
 
 		<header>
-			<h1>GamutKart e-commerce Portal</h1> 
+			<h1>Gamut Gurus DevOps & Cloud Learning e-commerce Platform</h1> 
 		</header>
 
 		<div id="tabs">
