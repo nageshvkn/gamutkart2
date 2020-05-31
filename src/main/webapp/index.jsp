@@ -28,28 +28,20 @@
 
 		<header>
 			<h1>Gamut Gurus DevOps & Cloud Learning e-commerce Platform</h1> 
+			<h4>Contact: +91-944897 1000 Email: info@gamutgurus.com</h4> 
 		</header>
 
 		<div id="tabs">
 			<ul>
-			<li><a href="#tabs-1">fashionista</a></li>
-				<li><a href="#tabs-2">electronics</a></li>
-				<li><a href="#tabs-3">groceries</a></li>
-				<li><a href="#tabs-4">mobiles</a></li>
+			<li><a href="#tabs-1">DevOps</a></li>
+				<li><a href="#tabs-2">Aws</a></li>
+				<li><a href="#tabs-3">GCP</a></li>
+				<li><a href="#tabs-4">Azure</a></li>
 			</ul>
 			<div id="tabs-1">
-				<p>Jenkins is a powerful application that allows continuous
-					integration and continuous delivery of projects, regardless of the
-					platform you are working on. It is a free source that can handle
-					any kind of build or continuous integration. You can integrate
-					Jenkins with a number of testing and deployment technologies</p>
-				<p>It is a great tool, but there are some issues regarding
-					scaling and performance (which is not so unusual). Other cool
-					solutions such as Travis and CircleCI, which are both hosted
-					solutions that do not require any maintenance on our side.</p>
-				<p>Jenkins is a software that allows continuous integration.
-					Jenkins will be installed on a server where the central build will
-					take place</p>
+				<p>https://en.wikipedia.org/wiki/DevOps</p>
+				<p>DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.</p>
+				<p>From an academic perspective, Len Bass, Ingo Weber, and Liming Zhu — three computer science researchers from the CSIRO and the Software Engineering Institute — suggested defining DevOps as "a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality".</p>
 			</div>
 			<div id="tabs-2">
 				<p>
@@ -109,7 +101,7 @@
 	</div >
 
 	<div class="container">
-		<footer> Copyright &copy; gamutgurus software services Pvt. Ltd. </footer>
+		<footer>@ 2020 Gamut Gurus Technologies. All rights Reserved.</footer>
 	</div>
 
 </body>
