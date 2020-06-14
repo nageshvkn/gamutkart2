@@ -4,6 +4,7 @@ metadata:
     name: gamutkart-service
     labels:
       app: gamutkart-app
+
 spec:
   selector:
     app: gamutkart-app

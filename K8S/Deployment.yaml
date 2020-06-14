@@ -4,15 +4,19 @@ metadata:
     name: gamutkart-deploy
     labels:
       app: gamutkart-app
+
 spec:
   replicas: 8
   selector:
     matchLabels:
       app: gamutkart-app
+
   template:
     metadata:
+      name: gamutkart-app
       labels:
         app: gamutkart-app
+
     spec:
       containers:
         - name: gamutkart-container
