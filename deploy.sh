@@ -1,6 +1,5 @@
 #!/bin/bash
 ##
-##
 ENVIRONMENT=$1
 if [ $ENVIRONMENT = "QA" ];then
 
