@@ -35,7 +35,7 @@
 			<ul>
 			<li><a href="#tabs-1">DevOps</a></li>
 				<li><a href="#tabs-2">Aws</a></li>
-				<li><a href="#tabs-3">GCP</a></li>
+				<li><a href="#tabs-3">Google Cloud Platform</a></li>
 				<li><a href="#tabs-4">Azure</a></li>
 			</ul>
 			<div id="tabs-1">
