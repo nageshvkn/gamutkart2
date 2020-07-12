@@ -11,7 +11,9 @@ pipeline {
 
     stages {
 		stage('test-param') {
-			sh echo "Parameter Val: $ENVIRONMENT"		
+			steps {
+				sh "echo Parameter Val: $ENVIRONMENT"		
+			}
 		}
 
 		stage('Clone-Repo') {
