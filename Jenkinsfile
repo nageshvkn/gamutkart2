@@ -10,11 +10,15 @@ pipeline {
 //	}
 
     stages {
+		stage('test-param') {
+			sh echo "Parameter Val: $ENVIRONMENT"		
+		}
+
 		stage('Clone-Repo') {
 			steps {
 				checkout scm
+			}
 		}
-	}
 	
 		stage('Build') {
 			steps {
