@@ -25,7 +25,7 @@ pipeline {
 			steps {
 				sh 'mvn compiler:testCompile'
 				sh 'mvn surefire:test'
-				junit '**/target/*.xml'
+				junit 'target/**/*.xml'
 			}
 		}
 
