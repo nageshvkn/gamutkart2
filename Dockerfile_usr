@@ -1,0 +1,14 @@
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install sudo -y
+RUN useradd -md /home/wiculty -s /bin/bash wiculty
+RUN echo "wiculty:wiculty" | chpasswd
+RUN sed -i '21i wiculty    ALL=(ALL:ALL) ALL' /etc/sudoers
+USER wiculty
+RUN mkdir /home/wiculty/Distros
+ADD apache-tomcat-8.5.38.tar.gz /home/wiculty/Distros
+COPY target/gamutgurus.war /home/wiculty/Distros/apache-tomcat-8.5.38/webapps
+RUN echo wiculty | sudo -S chmod 777 -R /home/wiculty/Distros/apache-tomcat-8.5.38
+ENTRYPOINT echo wiculty | sudo -S /home/wiculty/Distros/apache-tomcat-8.5.38/bin/startup.sh && bash
+
