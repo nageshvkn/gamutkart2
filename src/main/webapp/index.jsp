@@ -27,7 +27,7 @@
 	<div class="container">
 
 		<header>
-			<h1>Gamut Gurus DevOps & Cloud Learning e-commerce Platform</h1> 
+			<h1>Gamut Gurus DevOps & Cloud Learning Platform</h1> 
 			<h4>Contact: +91-944897 1000 Email: info@gamutgurus.com</h4> 
 		</header>
 
@@ -36,7 +36,7 @@
 			<li><a href="#tabs-1">DevOps</a></li>
 				<li><a href="#tabs-2">Aws</a></li>
 				<li><a href="#tabs-3">Google Cloud Platform</a></li>
-				<li><a href="#tabs-4">Azure</a></li>
+				<li><a href="#tabs-4">Azure Cloud</a></li>
 			</ul>
 			<div id="tabs-1">
 				<p>https://en.wikipedia.org/wiki/DevOps</p>
