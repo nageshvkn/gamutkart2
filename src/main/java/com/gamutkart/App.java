@@ -6,7 +6,7 @@ public class App
     {
 		int i;
 
-		for(i=0;i<=2000;i++)
+		for(i=0;i<=100;i++)
 		{
 			i += 4;
    		}
