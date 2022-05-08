@@ -23,7 +23,7 @@ pipeline {
 		
         stage('Unit Tests') {
             steps {
-                sh 'mvn compiler:testCompile'
+                sh 'mvn compil:testCompile'
                 sh 'mvn surefire:test'
                 junit 'target/**/*.xml'
             }
