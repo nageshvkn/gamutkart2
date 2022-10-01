@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-//	tools {
-//		maven 'maven3.6'
-//	}
+	tools {
+		jdk 'jdk8'
+	}
 //	environment {
 //		M2_INSTALL = "/usr/bin/mvn"
 //	}
