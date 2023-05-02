@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-	tools {
-		jdk 'jdk8'
-	}
+//	tools {
+//		jdk 'jdk8'
+//	}
 //	environment {
 //		M2_INSTALL = "/usr/bin/mvn"
 //	}
