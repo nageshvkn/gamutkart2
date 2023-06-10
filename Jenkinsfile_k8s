@@ -25,8 +25,9 @@ pipeline {
 		stage('Docker Image') {
             steps {
 				script {
-					//def dockerfile = './Dockerfile'
-					//docker.build("nageshvkn/gamutkart-img", "-f ${dockerfile} .")
+				    // this code block requires 'Docker Pipeline Plugin' installed
+					// def dockerfile = './Dockerfile'
+					// docker.build("nageshvkn/gamutkart-img", "-f ${dockerfile} .")
 
   					docker.build 'nageshvkn/gamutkart-img:latest'
 				}
