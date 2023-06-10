@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Docker Image') {
             steps {
-  				build(nageshvkn/gamutkart-img)
+  				docker.build 'nageshvkn/gamutkart-img:latest'
             }   
         }
 	}
