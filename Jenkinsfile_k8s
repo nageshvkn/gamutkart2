@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Docker Image') {
             steps {
-				scritp {
+				script {
 					def dockerfile = './Dockerfile'
 					docker.build("nageshvkn/gamutkart-img:${env.BUILD_NUMBER}", "-f ${dockerfile} .")
 
