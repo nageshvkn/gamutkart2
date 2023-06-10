@@ -28,8 +28,11 @@ pipeline {
 				    // this code block requires 'Docker Pipeline Plugin' installed
 					// def dockerfile = './Dockerfile'
 					// docker.build("nageshvkn/gamutkart-img", "-f ${dockerfile} .")
-
-  					docker.build 'nageshvkn/gamutkart-img:latest'
+					def dockerImage = docker.build('nageshvkn/gamutkart-img:1234')
+			        docker.withRegistry('https://hub.docker.com', 'docker-hub-credentials') {
+            			dockerImage.push()
+					}
+  					// docker.build 'nageshvkn/gamutkart-img:latest'
 				}
             }   
         }
