@@ -29,7 +29,7 @@ pipeline {
 					// def dockerfile = './Dockerfile'
 					// docker.build("nageshvkn/gamutkart-img", "-f ${dockerfile} .")
 					def dockerImage = docker.build('nageshvkn/gamutkart-img:1234')
-			        docker.withRegistry('https://hub.docker.com', 'docker-hub-credentials') {
+			        docker.withRegistry('https://dockerhub.com', 'docker-hub-credentials') {
             			dockerImage.push()
 					}
   					// docker.build 'nageshvkn/gamutkart-img:latest'
