@@ -24,7 +24,10 @@ pipeline {
 
 		stage('Docker Image') {
             steps {
-  				docker.build 'nageshvkn/gamutkart-img:latest'
+				def dockerfile = './Dockerfile'
+				docker.build("nageshvkn/gamutkart-img:${env.BUILD_NUMBER}", "-f ${dockerfile} .")
+
+  				//docker.build 'nageshvkn/gamutkart-img:latest'
             }   
         }
 	}
