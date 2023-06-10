@@ -27,5 +27,5 @@ pipeline {
   				build(nageshvkn/gamutkart-img)
             }   
         }
-
+	}
 }
