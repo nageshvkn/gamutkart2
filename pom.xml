@@ -30,7 +30,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>gamutgurus</finalName>
+		<finalName>gamutkart</finalName>
 	</build>
 	
 </project>
