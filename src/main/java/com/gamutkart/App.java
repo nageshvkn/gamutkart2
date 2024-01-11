@@ -7,6 +7,7 @@ public class App
 		int i;
 		int k;
 		int j;
+		int l;
 
 		for(i=0;i<=30;i++)
 		{
