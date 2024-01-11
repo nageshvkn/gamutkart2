@@ -7,9 +7,8 @@ public class App
 		int i;
 		int j;
 
-		for(i=0;i<=50;i++)
+		for(i=0;i<=30;i++)
 		{
-			i += 5;
 			i += 5;
    		}
 	 }
