@@ -1,5 +1,5 @@
 FROM ubuntu:20.04 
-MAINTAINER "info@gamutgurus.com"
+MAINTAINER "info@wiculty.com"
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk
 ENV JAVA_HOME /usr
