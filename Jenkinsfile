@@ -31,8 +31,8 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "akash" scp target/gamutkart.war akash@172.17.0.2:/home/akshatha/Distros/apache-tomcat-9.0.91/webapps'
-                sh 'sshpass -p "akash" ssh akash@172.17.0.2 "/home/akshatha/Distros/apache-tomcat-9.0.91/bin/startup.sh"'
+                sh 'sshpass -p "akash" scp target/gamutkart.war akash@172.17.0.2:/home/akshatha/apache-tomcat-9.0.91/webapps'
+                sh 'sshpass -p "akash" ssh akash@172.17.0.2 "/home/akshatha/apache-tomcat-9.0.91/bin/startup.sh"'
             }
         }
     }
