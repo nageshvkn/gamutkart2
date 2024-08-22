@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+//	tools {
+//		jdk 'jdk8'
+//	}
+//	environment {
+//		M2_INSTALL = "/usr/bin/mvn"
+//	}
+
+    environment {
+        TEST_FAIL_THRESHOLD = 5
+    }
+
+    stages {
+        stage('Clone-Repo') {
+	    	steps {
+	        	checkout scm
+	    	}
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn install -Dmaven.test.skip=true'
+            }
+        }
+		
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn compiler:testCompile'
+                sh 'mvn surefire:test'
+                junit 'target/**/*.xml'
+            }
+        }
+		stage('Code Coverage') {
+			steps {
+				script {
+                    def failedTests = 10
+                    echo "Number of failed tests: ${failedTests}"
+                    
+                    // Check if failed tests exceed the threshold
+                    if (failedTests > env.TEST_FAIL_THRESHOLD.toInteger()) {
+                        error "Test failures exceed the threshold of ${env.TEST_FAIL_THRESHOLD}. Failing the build."
+                    } else {
+                        echo 'All tests passed within the acceptable threshold.'
+                    }
+				}
+			}
+		}
+
+        stage('Deployment') {
+            steps {
+                sh 'sshpass -p "wiculty" scp target/gamutkart.war wiculty@172.17.0.2:/home/wiculty/Distros/apache-tomcat-9.0.93/webapps'
+                sh 'sshpass -p "wiculty" ssh wiculty@172.17.0.2 "/home/wiculty/Distros/apache-tomcat-9.0.93/bin/startup.sh"'
+            }
+        }
+    }
+}
