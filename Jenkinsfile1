@@ -32,10 +32,10 @@ pipeline {
                 junit 'target/**/*.xml'
             }
         }
-		stage('Code Coverage') {
+		stage('Code Quality') {
 			steps {
 				script {
-                    def failedTests = 4
+                    def failedTests = 10
                     echo "Number of failed tests: ${failedTests}"
                     
                     // Check if failed tests exceed the threshold
