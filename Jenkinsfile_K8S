@@ -32,14 +32,14 @@ pipeline {
 
 		stage('Build Images') {
 			steps {
-				sh docker build -t "nageshvkn/gamutkart-img" .
+				sh 'docker build -t "nageshvkn/gamutkart-img" .'
 			}
 		}
 
 		stage('Image Push') {
 			steps {
-				sh docker login -u nageshvkn -p $DOCKER_HUB_PWD
-				sh docker push nageshvkn/gamutkart-img
+				sh 'docker login -u nageshvkn -p $DOCKER_HUB_PWD'
+				sh 'docker push nageshvkn/gamutkart-img'
 			}
 		}
 
