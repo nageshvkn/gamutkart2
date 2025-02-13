@@ -57,9 +57,9 @@ pipeline {
 			steps {
 				script {
 					echo "Jenkins is able to connect to the cluster and starting image Deployment.. "
+					sh 'kubectl apply -f /home/parallels/Projects/gamutkart/deployment.yaml'
+					sh 'kubectl apply -f /home/parallels/Projects/gamutkart/service.yaml'
 				}
-				sh 'kubectl apply -f /home/parallels/Projects/gamutkart/deployment.yaml'
-				sh 'kubectl apply -f /home/parallels/Projects/gamutkart/service.yaml'
 			}
 		}
 
