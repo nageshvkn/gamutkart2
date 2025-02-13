@@ -1,0 +1,102 @@
+pipeline {
+    agent any
+
+    // Define environment variables
+    environment {
+        MY_ENV_VAR = 'production'
+    }
+
+    // Define tools to be used (e.g., Maven)
+    tools {
+        maven 'maven3.9.9'  // Ensure Maven 3.9.9 is configured in 'Manage Jenkins'--> 'Tools'
+    }
+
+    // Define parameters
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to deploy')
+        booleanParam(name: 'SKIP_TESTS', defaultValue: false, description: 'Skip the tests step')
+    }
+
+    stages {
+        // Stage 1: Checkout code from repository
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        // Stage 2: Build the application
+        stage('Build') {
+            steps {
+                script {
+                    echo "Building the project..."
+                    sh 'mvn install -Dmaven.test.skip=true'  // Assuming it's a Maven project
+                }
+            }
+        }
+
+        // Stage 3: Run Tests (only if not skipped)
+        stage('Run Tests') {
+            when {
+                expression { return !params.SKIP_TESTS }  // Run tests only if SKIP_TESTS is false
+            }
+            steps {
+                script {
+                    echo "Running unit tests..."
+					sh 'mvn compiler:testCompile'
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Deploy to Staging') {
+            steps {
+                script {
+                    echo "Deploying to Staging environment..."
+                    sh 'ansible-playbook -i inventory deploy_staging.yml'
+                }
+            }
+        }
+
+        // Stage 5: Parallel Testing (run on two environments)
+        stage('Parallel Testing') {
+            parallel {
+                stage('Test in Environment 1') {
+                    steps {
+                        script {
+                            echo "Running tests in Environment 1..."
+                            // Add test commands for Environment 1
+                            sh 'curl http://env1.example.com/run_tests'
+                        }
+                    }
+                }
+                stage('Test in Environment 2') {
+                    steps {
+                        script {
+                            echo "Running tests in Environment 2..."
+                            // Add test commands for Environment 2
+                            sh 'curl http://env2.example.com/run_tests'
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    // Post-build actions
+    post {
+        success {
+            echo 'Build was successful!'
+            // Notify or trigger actions after a successful build
+        }
+        failure {
+            echo 'Build failed.'
+            // Notify or take actions when the build fails
+        }
+        always {
+            echo 'This will run no matter what, successful or failed.'
+        }
+    }
+}
+
