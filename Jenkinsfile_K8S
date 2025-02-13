@@ -9,6 +9,10 @@ pipeline {
 //		M2_INSTALL = "/usr/bin/mvn"
 //	}
 
+	environment {
+       DOCKER_HUB_PWD = credentials('DOCKER_HUB_PWD')
+    }
+
     stages {
         stage('Clone-Repo') {
 	    	steps {
