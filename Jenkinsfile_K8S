@@ -47,11 +47,16 @@ pipeline {
 			}
 		}
 
-//        stage('Deployment') {
-//           steps {
-//                sh 'sshpass -p "wiculty" scp target/gamutkart.war wiculty@172.17.0.2:/home/wiculty/Distros/apache-tomcat-9.0.98/webapps'
-//                sh 'sshpass -p "wiculty" ssh wiculty@172.17.0.2 "/home/wiculty/Distros/apache-tomcat-9.0.98/bin/startup.sh"'
-//            }
-//        }
+        stage('Cluster Connect') {
+           steps {
+				sh 'gcloud container clusters get-credentials gamutkart-cluster --region us-central1 --project airy-passkey-429115-g4'
+           }
+        }
+		
+		stage('K8S Deployment') {
+			sh 'kubectl apply -f /home/parallels/Projects/gamutkart/deployment.yaml'
+			sh 'kubectl apply -f /home/parallels/Projects/gamutkart/service.yaml'
+		}
+
     }
 }
