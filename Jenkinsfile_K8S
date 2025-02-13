@@ -54,8 +54,10 @@ pipeline {
         }
 		
 		stage('K8S Deployment') {
-			sh 'kubectl apply -f /home/parallels/Projects/gamutkart/deployment.yaml'
-			sh 'kubectl apply -f /home/parallels/Projects/gamutkart/service.yaml'
+			steps {
+				sh 'kubectl apply -f /home/parallels/Projects/gamutkart/deployment.yaml'
+				sh 'kubectl apply -f /home/parallels/Projects/gamutkart/service.yaml'
+			}
 		}
 
     }
