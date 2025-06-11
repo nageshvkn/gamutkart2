@@ -34,7 +34,7 @@ pipeline {
 	stage('Code Quality') {
 	    steps {
 		script {
-                    def failedTests = 10
+                    def failedTests = 4
                     echo "Number of failed tests: ${failedTests}"
                     
                     // Check if failed tests exceed the threshold
