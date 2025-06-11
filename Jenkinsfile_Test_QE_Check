@@ -1,12 +1,9 @@
 pipeline {
     agent any
 
-//	tools {
-//		jdk 'jdk8'
-//	}
-//	environment {
-//		M2_INSTALL = "/usr/bin/mvn"
-//	}
+	tools {
+		jdk 'jdk11'
+	}
 
     environment {
         TEST_FAIL_THRESHOLD = 5
@@ -32,9 +29,11 @@ pipeline {
                 junit 'target/**/*.xml'
             }
         }
-		stage('Code Quality') {
-			steps {
-				script {
+	
+
+	stage('Code Quality') {
+	    steps {
+		script {
                     def failedTests = 10
                     echo "Number of failed tests: ${failedTests}"
                     
@@ -44,14 +43,14 @@ pipeline {
                     } else {
                         echo 'All tests passed within the acceptable threshold.'
                     }
-				}
-			}
 		}
+	    }
+	}
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "wiculty" scp target/gamutkart.war wiculty@172.17.0.2:/home/wiculty/Distros/apache-tomcat-9.0.93/webapps'
-                sh 'sshpass -p "wiculty" ssh wiculty@172.17.0.2 "/home/wiculty/Distros/apache-tomcat-9.0.93/bin/startup.sh"'
+                sh 'sshpass -p "1234" scp target/gamutkart.war wiculty@172.17.0.2:/home/wiculty/Distros/apache-tomcat-10.1.41/webapps'
+                sh 'sshpass -p "1234" ssh wiculty@172.17.0.2 "/home/wiculty/Distros/apache-tomcat-10.1.41/bin/startup.sh"'
             }
         }
     }
