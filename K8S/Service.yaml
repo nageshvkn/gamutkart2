@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: gamutkart-service
-    labels:
-      app: gamutkart-app
-
+  name: gamutkart-service
+  labels:
+    env: prod
+    version: v1.2.3
 spec:
+  type: LoadBalancer
+  
   selector:
-    app: gamutkart-app
-  type: NodePort
+    app: gamutkart
+
   ports:
   - nodePort: 31000
     port: 8080
