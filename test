@@ -1,0 +1,1 @@
+gcloud container clusters get-credentials gamutkart-cluster --region us-central1 --project handy-balancer-459710-q9
