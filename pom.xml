@@ -1,37 +1,45 @@
 <project>
+    <modelVersion>4.0.0</modelVersion>
 
-	<modelVersion>4.0.0</modelVersion>
+    <groupId>com.gamutgurus</groupId>
+    <artifactId>gamutkart</artifactId>
+    <packaging>war</packaging>
+    <version>1.1-SNAPSHOT</version>
 
-	<groupId>com.gamutgurus</groupId>
-	<artifactId>gamutkart</artifactId>
-	<packaging>war</packaging>
-	<version>1.1-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.release>8</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<properties>
-     		<maven.compiler.source>1.8</maven.compiler.source>
-     		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-	
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-			
-	</dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<finalName>gamutkart</finalName>
-	</build>
-	
+    <build>
+        <finalName>gamutkart</finalName>
+
+        <plugins>
+            <!-- REQUIRED for JDK 17 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>8</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
-
